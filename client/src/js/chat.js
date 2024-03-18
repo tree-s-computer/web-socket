@@ -14,11 +14,13 @@ const createChatList = (data) => {
 };
 
 sendButton.addEventListener("click", () => {
+  //like fetch :  body
   const prams = { name: nickname.value, msg: chatInput.value };
   socket.emit("chatting", prams);
 });
 
 socket.on("chatting", (data) => {
+  //like fetch : get
   console.log("chat js:");
   createChatList(data);
 });
