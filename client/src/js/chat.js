@@ -21,6 +21,5 @@ sendButton.addEventListener("click", () => {
 
 socket.on("chatting", (data) => {
   //like fetch : get
-  console.log("chat js:");
   createChatList(data);
 });
