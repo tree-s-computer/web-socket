@@ -14,9 +14,9 @@ const io = new Server(server);
 
 io.on("connection", (socket) => {
   console.log("연결이 이루어졌습니다.");
+
   socket.on("chatting", (data) => {
-    console.log(data);
-    io.emit("chatting", "그래 반가워" + data);
+    io.emit("chatting", data);
   });
 });
 
