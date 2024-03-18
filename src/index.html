@@ -8,12 +8,11 @@
   <body>
     <h1>Hello</h1>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
     <script>
       const socket = io("http://localhost:8080");
 
-      socket.on("connect", () => {
-        console.log("Connected to server");
-      });
+      socket.emit("chatting", "from font!");
     </script>
   </body>
 </html>
