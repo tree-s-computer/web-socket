@@ -10,10 +10,10 @@ const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "/src")));
 
 const server = http.createServer(app);
-
 const io = new Server(server);
 
 io.on("connection", (socket) => {
+  console.log("연결이 이루어졌습니다.");
   socket.on("chatting", (data) => {
     console.log(data);
     io.emit("chatting", "그래 반가워" + data);
