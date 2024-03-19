@@ -1,6 +1,7 @@
 "use strict";
 
 const socket = io();
+
 const nickname = document.querySelector("#nickname");
 const chatList = document.querySelector(".chatting-list");
 const chatInput = document.querySelector(".chatting-input");
@@ -11,6 +12,13 @@ const loginInfo = {
   name: 123456789,
   userid: "ungmo2@gmail.com",
 };
+
+socket.emit("login", loginInfo); //1
+socket.on("login", (data) => {
+  //4
+  //like fetch : get
+  chatList.innerText = data + "님이 로그인 했어요. ";
+});
 
 const createChatList = (data) => {
   const { name, msg } = data;
@@ -28,6 +36,15 @@ form.addEventListener("submit", (e) => {
   msgForm.value = "";
 });
 
+socket.on("chat", (data) => {
+  const { name, userid } = data.from;
+  const { msg } = data;
+
+  const div = document.createElement("div");
+  div.innerText = msg;
+  chatList.appendChild(div);
+});
+
 sendButton.addEventListener("click", () => {
   //like fetch :  body
   const prams = { name: nickname.value, msg: chatInput.value };
@@ -38,12 +55,4 @@ sendButton.addEventListener("click", () => {
 socket.on("chatting", (data) => {
   //like fetch : get
   createChatList(data);
-});
-
-socket.emit("login", loginInfo); //1
-
-socket.on("login", (data) => {
-  //4
-  //like fetch : get
-  chatList.innerText = data + "님이 로그인 했어요. ";
 });
