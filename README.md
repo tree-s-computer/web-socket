@@ -21,3 +21,12 @@ ex. 채팅, 주식
 1. Opening Handshake : HTTP Upgrade request / HTTP 101 response
 2. Data transfer : WS frame
 3. Closing Handshake : CLose / Close Response
+
+## Room
+
+각 namespace 내에서 임의의 채널을 지정할 수 있다. 이를 room이라 하며 이를 통해 room에 join되어 있는 클라이언트 만의 데이터 송수신이 가능하게 된다.
+즉 각 클라이언트는 socket을 가지게 되며 이 socket은 namespace를 가지고 각 namespace는 room을 가질 수 있다.
+
+### ref
+
+https://poiemaweb.com/nodejs-socketio
