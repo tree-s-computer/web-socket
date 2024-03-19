@@ -1,61 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>index.html</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io Example</title>
   </head>
   <body>
+    <h1>Hello</h1>
+
     <div class="container">
-      <h3>index.html</h3>
-      <!-- <form class="form-inline"> -->
-      <form class="form-horizontal">
+      <h3>Socket.io Chat Example</h3>
+      <form class="form-inline">
         <div class="form-group">
-          <label for="name" class="col-sm-2 control-label">Name</label>
-          <div class="col-sm-10">
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Name"
-            />
-          </div>
+          <label for="msgForm">Message: </label>
+          <input type="text" class="form-control" id="msgForm" />
         </div>
-        <div class="form-group">
-          <label for="room" class="col-sm-2 control-label">Room</label>
-          <div class="col-sm-10">
-            <input
-              type="text"
-              class="form-control"
-              id="room"
-              placeholder="Room"
-            />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="msg" class="col-sm-2 control-label">Message</label>
-          <div class="col-sm-10">
-            <input
-              type="text"
-              class="form-control"
-              id="msg"
-              placeholder="Message"
-            />
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Send</button>
-          </div>
-        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
       </form>
-      <ul id="chat"></ul>
+      <div id="chatLogs"></div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <br />
+    <br />
+    <br />
+    <div class="user-container">
+      <label for="nickname"> 대화명 :</label>
+      <input type="text" id="nickname" />
+    </div>
+    <div><ul class="chatting-list"></ul></div>
+    <div>
+      <input type="text" class="chatting-input" />
+      <button class="send-button">전송</button>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="js/room.js"></script>
+    <script src="js/chat.js"></script>
   </body>
 </html>
