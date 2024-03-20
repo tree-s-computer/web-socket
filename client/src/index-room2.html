@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="roomoptions" onchange="joinRoom()">
+      <option value="채팅방 1" selected>채팅방 1</option>
+
+      <option value="채팅방 2">채팅방 2</option>
+    </select>
+    <ul id="messages" type="none">
+      <li id="usercount"></li>
+    </ul>
+
+    <form id="msgform">
+      <input id="msginput" autocomplete="off" type="text" />
+      <button type="submit">전송</button>
+    </form>
+
+    <button onclick="enableDebug()">방 목록 가져오기</button>
+
+    <p id="rooms"></p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/multiroom.js"></script>
+  </body>
+</html>

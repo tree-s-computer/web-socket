@@ -1,6 +1,7 @@
 "use strict";
 
 const socket = io();
+// io 함수는 알아서 socket.io를 실행하고 있는 서버를 찾는다.
 
 const nickname = document.querySelector("#nickname");
 const chatList = document.querySelector(".chatting-list");
