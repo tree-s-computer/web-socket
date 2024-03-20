@@ -27,19 +27,28 @@ ex. 채팅, 주식
 각 namespace 내에서 임의의 채널을 지정할 수 있다. 이를 room이라 하며 이를 통해 room에 join되어 있는 클라이언트 만의 데이터 송수신이 가능하게 된다.
 즉 각 클라이언트는 socket을 가지게 되며 이 socket은 namespace를 가지고 각 namespace는 room을 가질 수 있다.
 
-### ref
-
-https://poiemaweb.com/nodejs-socketio
-
-## 명령어
+# Socket Io Command
 
 socket.connect(): 클라이언트 소켓을 서버에 연결
+
 socket.disconnect(): 소켓 연결을 종료
+
 socket.send(): 데이터를 연결된 상대방에게 보낸다.
+
 socket.on('event', callback): 특정 이벤트가 발생했을 때 실행할 콜백 함수를 등록한다.
+
 socket.emit('event', data): 클라이언트나 서버에서 이벤트를 발생시킵니다. 연결된 상대방에게 데이터를 보낼 수 있다.
+
 socket.join(room): 클라이언트를 특정 룸에 조인시킨다.
+
 socket.leave(room): 클라이언트를 특정 룸에서 나가게 한다.
+
 socket.broadcast.emit('event', data): 연결된 다른 모든 클라이언트에게 이벤트를 발생시키고 데이터를 보낸다.
+
 socket.rooms: 클라이언트가 현재 조인한 모든 룸의 리스트를 반환
+
 socket.id: 소켓의 고유 식별자를 반환
+
+# ref
+
+https://poiemaweb.com/nodejs-socketio
