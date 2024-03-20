@@ -49,7 +49,8 @@ chatNamespace.on("connection", (socket) => {
 io.on("connection", (socket) => {
   console.log("connection 기본 ㄴ ㅔ임 스페이스");
 
-  socket.emit("usercount", io.engine.clientsCount);
+  const { clientsCount } = io.engine;
+  socket.emit("usercount", clientsCount);
   socket.join("채팅방 1");
 
   socket.on("message", (msg, roomname) => {

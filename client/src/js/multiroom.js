@@ -42,7 +42,7 @@ msgform.onsubmit = (e) => {
 function enableDebug() {
   // 방 목록 가져오기 버튼 클릭시
   // url을 지정해서 특정 네임스페이스를 들어갈 수 있다.
-  const debug = io.connect("http://localhost:3000/debug");
+  const debug = io.connect("http://localhost:8080/debug");
 
   debug.emit("getRooms"); // getRooms 이벤트 호출
 

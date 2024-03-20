@@ -30,3 +30,16 @@ ex. 채팅, 주식
 ### ref
 
 https://poiemaweb.com/nodejs-socketio
+
+## 명령어
+
+socket.connect(): 클라이언트 소켓을 서버에 연결
+socket.disconnect(): 소켓 연결을 종료
+socket.send(): 데이터를 연결된 상대방에게 보낸다.
+socket.on('event', callback): 특정 이벤트가 발생했을 때 실행할 콜백 함수를 등록한다.
+socket.emit('event', data): 클라이언트나 서버에서 이벤트를 발생시킵니다. 연결된 상대방에게 데이터를 보낼 수 있다.
+socket.join(room): 클라이언트를 특정 룸에 조인시킨다.
+socket.leave(room): 클라이언트를 특정 룸에서 나가게 한다.
+socket.broadcast.emit('event', data): 연결된 다른 모든 클라이언트에게 이벤트를 발생시키고 데이터를 보낸다.
+socket.rooms: 클라이언트가 현재 조인한 모든 룸의 리스트를 반환
+socket.id: 소켓의 고유 식별자를 반환
